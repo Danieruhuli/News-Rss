@@ -1,0 +1,32 @@
+name: Generate RSS from EPG
+
+on:
+  schedule:
+    - cron: "0 6 * * *"   # Ejecutar 1 vez al día a las 06:00 UTC
+  workflow_dispatch:       # Permite ejecución manual
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Generate RSS
+        run: npm run rss
+
+      - name: Commit & Push RSS
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "github-actions@github.com"
+          git add docs/tjpw.xml
+          git commit -m "Update RSS feed"
+          git push

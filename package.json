@@ -1,0 +1,20 @@
+{
+  "name": "new-rss",
+  "version": "1.0.0",
+  "main": "epg-to-rss.js",
+  "scripts": {
+    "rss": "node epg-to-rss.js"
+  },
+  "dependencies": {
+    "fast-xml-parser": "^4.5.3",
+    "node-fetch": "^2.7.0",
+    "xml2js": "^0.6.2"
+  },
+  "description": "Seguimiento RSS a nuevas publicaciones de páginas en FB",
+  "directories": {
+    "doc": "docs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

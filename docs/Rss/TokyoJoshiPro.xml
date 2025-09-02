@@ -1,0 +1,26 @@
+<rss version="2.0">
+  <channel>
+    <title>Tokyo Joshi Pro EPG Feed</title>
+    <link>https://tvguide.myjcom.jp/</link>
+    <description>Programas de 東京女子プロレス</description>
+    <language>ja</language>
+    <item>
+      <title>東京女子プロレス 2023.3.18 有明コロシアム</title>
+      <link>https://tvguide.myjcom.jp/</link>
+      <guid>東京女子プロレス 2023.3.18 有明コロシアム20250902190000</guid>
+      <pubDate>Tue, 02 Sep 2025 19:00:00 GMT</pubDate>
+      <description>⏰ Tue, 02 Sep 2025 19:00:00 GMT | 📺 Canal: FIGHTING TV サムライ.jp
+
+東京女子プロレス「GRAND PRINCESS 23」2023.3.18 有明コロシアム</description>
+    </item>
+    <item>
+      <title>東京女子プロレス 2024.9.22幕張メッセ国際展示場</title>
+      <link>https://tvguide.myjcom.jp/</link>
+      <guid>東京女子プロレス 2024.9.22幕張メッセ国際展示場20250903220000</guid>
+      <pubDate>Wed, 03 Sep 2025 22:00:00 GMT</pubDate>
+      <description>⏰ Wed, 03 Sep 2025 22:00:00 GMT | 📺 Canal: FIGHTING TV サムライ.jp
+
+東京女子プロレス「WRESTLE PRINCESS V」2024.9.22 幕張メッセ国際展示場</description>
+    </item>
+  </channel>
+</rss>
