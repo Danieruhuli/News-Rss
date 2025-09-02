@@ -42,6 +42,7 @@ const OUTPUT = path.join('docs', 'Rss', 'TokyoJoshiPro.xml');
       // Parsear fecha de inicio y convertir a formato RSS (UTC)
       const start = p.$.start?.slice(0, 14); // YYYYMMDDHHMMSS
       let pubDate = '';
+      let jstString = '';
       if (start) {
         const year = start.slice(0, 4);
         const month = start.slice(4, 6);
@@ -50,7 +51,17 @@ const OUTPUT = path.join('docs', 'Rss', 'TokyoJoshiPro.xml');
         const minute = start.slice(10, 12);
         const second = start.slice(12, 14);
         const date = new Date(`${year}-${month}-${day}T${hour}:${minute}:${second}Z`);
-        pubDate = date.toUTCString();
+        pubDate = date.toUTCString(); // esto sigue en UTC para el campo <pubDate>
+        // 🔹 Convertir a hora de Japón (+9)
+        const jstDate = new Date(date.getTime() + 0 * 60 * 60 * 1000);
+        jstString = jstDate.toLocaleString('ja-JP', {
+        timeZone: 'Asia/Tokyo',
+        year: 'numeric',
+        month: '2-digit',
+        day: '2-digit',
+        hour: '2-digit',
+        minute: '2-digit',
+        });
       }
 
       return {
@@ -58,7 +69,7 @@ const OUTPUT = path.join('docs', 'Rss', 'TokyoJoshiPro.xml');
         link: 'https://tvguide.myjcom.jp/', // no hay link directo, ponemos placeholder
         guid: title + start,
         pubDate: pubDate,
-        description: `⏰ ${pubDate} | 📺 Canal: ${channel}\n\n${desc}`,
+        description: `⏰ ${jstString} (JST)  | 📺 Canal: ${channel}\n\n${desc}`,
       };
     });
 
