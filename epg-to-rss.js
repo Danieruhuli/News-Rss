@@ -5,7 +5,7 @@ const { Builder } = require('xml2js');
 const path = require('path');
 
 const EPG_URL = 'https://www.open-epg.com/generate/qzWgTkEjFi.xml';
-const OUTPUT = path.join('docs', 'Rss', 'TJPW.xml');
+const OUTPUT = path.join('docs', 'rss', 'TJPW.xml');
 
 (async () => {
   try {
