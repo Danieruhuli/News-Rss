@@ -23,11 +23,16 @@ const OUTPUT = path.join('docs', 'rss', 'TJPW.xml');
                                       const programmes = result.tv.programme || [];
                                           console.log(`🔎 Total de programas en EPG: ${programmes.length}`);
 
-                                              // Filtrar solo los programas que contengan "東京女子プロレス" // "SEAdLINNNG" en el título
-                                                  const filtered = programmes.filter(p => {
-                                                        const title = p.title?.[0] || '';
-                                                              return title.includes('東京女子プロレス') || title.includes('SEAdLINNNG');
-                                                                  });
+                                               // Filtrar programas que contengan ciertas palabras clave en el título
+                                                    const filtered = programmes.filter(p => {
+                                                       const title = p.title?.[0] || '';
+                                                                return (
+                                                                        title.includes('東京女子プロレス') ||
+                                                                        title.includes('SEAdLINNNG') ||
+                                                                        title.includes('ジェニーはティーン') ||
+                                                                        title.includes('エコモダ')
+                                                                        );
+                                                                 });
 
                                                                       console.log(`✅ Programas filtrados: ${filtered.length}`);
 
